@@ -1,0 +1,5 @@
+#!/bin/bash
+PYFILE_BASE="${PYFILE%.py}"
+python3 -c "import $PYFILE_BASE"
+mv __pycache__/*.pyc ./"${PYFILE}c"
+rm -r __pycache__/
