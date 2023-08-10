@@ -1,5 +1,8 @@
 #!/bin/bash
-PYFILE_BASE="${PYFILE%.py}"
-python3 -c "import $PYFILE_BASE"
-mv __pycache__/*.pyc ./"${PYFILE}c"
-rm -r __pycache__/
+# Get the filename from the environment variable
+pyfile="$PYFILE"
+
+python3 -m py_compile "$pyfile"
+compiled_file="${pyfile}c"
+echo "Compiling '$pyfile' ..."
+mv ./__pycache__/*.pyc ./$compiled_file
