@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 def print_matrix_integer(matrix=[[]]):
-    if matrix:
+    if matrix is None or matrix == [[]]:
+        print()
+    else:
         for liste in matrix:
             idx_elmt = len(liste)
             for i in range(0, idx_elmt):
@@ -10,5 +12,3 @@ def print_matrix_integer(matrix=[[]]):
                     print(" ", end="")
                 else:
                     print()
-    elif matrix is None:
-        return
