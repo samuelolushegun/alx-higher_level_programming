@@ -10,5 +10,5 @@ def print_matrix_integer(matrix=[[]]):
                     print(" ", end="")
                 else:
                     print()
-    else:
-        print()
+    elif matrix is None:
+        return
