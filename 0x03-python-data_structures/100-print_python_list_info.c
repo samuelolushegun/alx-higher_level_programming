@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "listobject.h"
-#include "object.h"
-#include "lists.h"
-
+#include <Python.h>
 /**
  * print_python_list_info - prints some basic info about Python lists
  * @p: pointer to a python oblect
