@@ -2,6 +2,8 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
+    elif not a_dictionary:
+        return None
     else:
         for key in a_dictionary:
             b_val = a_dictionary[key]
