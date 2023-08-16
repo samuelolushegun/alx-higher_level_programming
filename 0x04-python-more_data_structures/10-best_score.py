@@ -7,6 +7,7 @@ def best_score(a_dictionary):
     else:
         for key in a_dictionary:
             b_val = a_dictionary[key]
+            b_key = key
             break
         for key, value in a_dictionary.items():
             if value > b_val:
