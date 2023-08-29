@@ -1,0 +1,1 @@
+This folder containt task about Python - Classes and Objects
