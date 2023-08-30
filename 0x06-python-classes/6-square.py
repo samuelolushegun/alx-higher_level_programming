@@ -65,14 +65,20 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character #"""
-        if self.__size > 0:
-            for y in range(0, self.__position[1]):
-                print()
-            for a in range(0, self.__size):
-                for x in range(0, self.__position[0]):
-                    print(" ", end="")
-                for b in range(0, self.__size):
-                    print("#", end="")
-                print()
-        elif self.__size == 0:
-            print()
+        p_check1 = type(self.__position) is tuple and len(self.__position) == 2
+        if p_check1:
+            pos_check_2a = type(self.__position[0]) is int
+            pos_check_2b = isinstance(self.__position[1], int)
+            if pos_check_2a and pos_check_2b:
+                po_check3 = self.__position[0] >= 0 and self.__position[1] >= 0
+                if self.__size > 0 and po_check3:
+                    for y in range(0, self.__position[1]):
+                        print()
+                    for a in range(0, self.__size):
+                        for x in range(0, self.__position[0]):
+                            print(" ", end="")
+                        for b in range(0, self.__size):
+                            print("#", end="")
+                        print()
+                elif self.__size == 0:
+                    print()
