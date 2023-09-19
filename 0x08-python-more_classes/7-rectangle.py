@@ -7,6 +7,7 @@
 class Rectangle:
     """This object defines a rectangle"""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         if not isinstance(width, int):
@@ -20,7 +21,6 @@ class Rectangle:
         self.__height = height
         self.__width = width
         Rectangle.number_of_instances += 1
-        Rectangle.print_symbol = "#"
 
     @property
     def width(self):
@@ -62,8 +62,8 @@ class Rectangle:
             return ("")
         else:
             for h in range(self.__height - 1):
-                print(Rectangle.print_symbol * self.width)
-            print(Rectangle.print_symbol * self.width, end="")
+                print(self.print_symbol * self.width)
+            print(self.print_symbol * self.width, end="")
             return ("")
 
     def __repr__(self):
