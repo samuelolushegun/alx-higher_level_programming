@@ -1,2 +1,31 @@
 '''
 Test cases for add_integer function.
+>>> from addint import add_integer
+
+>>> add_integer(2, 5)
+7
+>>> add_integer(2.0, 45)
+47
+>>> add_integer(2.40, 4.5)
+6
+>>> add_integer(98)
+196
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(10)
+108
+>>> add_integer('d', 10)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(26, "Waouh")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer('a', "Waouh")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>>
