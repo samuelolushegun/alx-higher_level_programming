@@ -1,6 +1,4 @@
-'''
-Test cases for add_integer function.
->>> from addint import add_integer
+>>> from  add_integer_0.py import add_integer
 
 >>> add_integer(2, 5)
 7
