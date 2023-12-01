@@ -1,7 +1,7 @@
 '''
 Test cases for add_integer function
 
->>> from  add_integer_0.py import add_integer
+>>> from  0_add_integer import add_integer
 
 >>> add_integer(2, 5)
 7
