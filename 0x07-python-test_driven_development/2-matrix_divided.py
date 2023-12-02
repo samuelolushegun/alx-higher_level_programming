@@ -22,7 +22,7 @@ def matrix_divided(matrix, div):
                         if isinstance(j, (int, float)):
                             nlist.append(round((j / div), 2))
                         else:
-                            raise TypeError("matrix must be a matrix (array"
+                            raise TypeError("matrix must be a matrix (array "
                                             "of arrays) of integers/floats")
                     new_mat.append(nlist)
                 else:
