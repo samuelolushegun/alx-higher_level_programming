@@ -1,0 +1,35 @@
+'''
+Test for matrix divided function
+
+>>> from matrix_divided_2 import matrix_divided
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>> mat =[
+...     [2, 5, 8, 9],
+...     [10, 42, 5, 3],
+...     [1, 1, 3, 5, 27],
+...     ['sam', 45, 6, 4]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+	...
+ZeroDivisionError: division by zero
+>>> matrix_divided(mat, 3)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+>>> mat =[
+...     [2, 5, 8, 9],
+...     [10, 42, 5, 3],
+...     ['sam', 45, 6, 4]
+... ]
+>>> matrix_divided(mat, 3)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+'''
