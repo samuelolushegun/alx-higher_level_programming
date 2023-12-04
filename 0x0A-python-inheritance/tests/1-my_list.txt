@@ -1,6 +1,4 @@
-'''
-	Test cases for print_sorted method of MyList class.
-'''
+Test cases for print_sorted method of MyList class.
 
 >>> MyList = __import__('1-my_list').MyList
 >>> mlist = MyList()
@@ -18,4 +16,10 @@
 >>> m_list = MyList([-6, 5, 3, -56, -7, 4, 8])
 >>> m_list.print_sorted()
 [-56, -7, -6, 3, 4, 5, 8]
+
+>>> m_list = MyList([3, 2, 's', 5])
+>>> m_list.print_sorted()
+Traceback (most recent call last):
+	...
+TypeError: '<' not supported between instances of 'str' and 'int'
 >>>
