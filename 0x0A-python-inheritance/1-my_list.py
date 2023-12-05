@@ -10,3 +10,4 @@ class MyList(list):
     def print_sorted(self):
         ''' Public method thet print the sorted list '''
         print(sorted(self))
+        return (sorted(self))
