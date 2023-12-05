@@ -1,0 +1,17 @@
+Test cases
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> geo = BaseGeometry()
+>>> geo.integer_validator('side_length', 5)
+
+>>> geo = BaseGeometry()
+>>> geo.integer_validator('side_length', 'not_an_integer')
+Traceback (most recent call last):
+	...
+TypeError: side_length must be an integer
+
+>>> geo = BaseGeometry()
+>>> geo.integer_validator('sidel', -2)
+Traceback (most recent call last):
+	  ...
+ValueError: sidel must be greater than 0
