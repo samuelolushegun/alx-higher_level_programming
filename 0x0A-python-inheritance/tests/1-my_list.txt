@@ -38,4 +38,10 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 [2, 3, 7, 10]
 >>> Origin_l
 [10, 3, 2, 7]
+>>> new_l
+[10, 3, 2, 7]
+>>> new_l is Origin_l
+False
+>>> new_l == Origin_l
+True
 >>>
