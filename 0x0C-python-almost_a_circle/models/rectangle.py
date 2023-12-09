@@ -9,39 +9,88 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
+
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        elif (width <= 0):
+            raise ValueError("width must be > 0")
         self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif (height <= 0):
+            raise ValueError("height must be > 0")
         self.__height = height
+
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        elif (x < 0):
+            raise ValueError("x must be >= 0")
         self.__x = x
+
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        elif (y < 0):
+            raise ValueError("y must be >= 0")
         self.__y = y
 
-        @property
-        def width(self):
-            return (self.__width)
+    @property
+    def width(self):
+        return (self.__width)
 
-        @width.setter
-        def width(self, largeur):
-            self.__width = largeur
+    @width.setter
+    def width(self, largeur):
+        if not isinstance(largeur, int):
+            raise TypeError("width must be an integer")
+        elif (largeur <= 0):
+            raise ValueError("width must be > 0")
+        self.__width = largeur
 
-        @property
-        def height(self):
-            return (self.__height)
+    @property
+    def height(self):
+        return (self.__height)
 
-        @height.setter
-        def height(self, longueur):
-            self.__height = longueur
+    @height.setter
+    def height(self, longueur):
+        if not isinstance(longueur, int):
+            raise TypeError("height must be an integer")
+        elif (longueur <= 0):
+            raise ValueError("height must be > 0")
+        self.__height = longueur
 
-        @property
-        def x(self):
-            return (self.__x)
+    @property
+    def x(self):
+        return (self.__x)
 
-        @x.setter
-        def x(self, abscisse):
-            self.__x = abscisse
+    @x.setter
+    def x(self, abscisse):
+        if not isinstance(abscisse, int):
+            raise TypeError("x must be an integer")
+        elif (abscisse < 0):
+            raise ValueError("x must be >= 0")
+        self.__x = abscisse
 
-        @property
-        def y(self):
-            return (self.__y)
+    @property
+    def y(self):
+        return (self.__y)
 
-        @y.setter
-        def y(self, ordonnée):
-            self.__y = ordonnée
+    @y.setter
+    def y(self, ordonne):
+        if not isinstance(ordonne, int):
+            raise TypeError("y must be an integer")
+        elif (ordonne < 0):
+            raise ValueError("y must be >= 0")
+        self.__y = ordonne
+
+    def area(self):
+        return (self.__width * self.__height)
+
+    def display(self):
+        for i in range(self.__y):
+            print()
+        for i in range(self.__height):
+            print((" " * self.__x) + ("#" * self.__width))
+
+    def __str__(self):
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}" +
+                f" - {self.__width}/{self.__height}")
