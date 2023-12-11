@@ -8,7 +8,6 @@ class Rectangle(Base):
     '''Definition of rectangle class that is child of our base class'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''The init function of rectaangle class'''
         super().__init__(id)
 
         if not isinstance(width, int):
@@ -103,7 +102,6 @@ class Rectangle(Base):
             print((" " * self.__x) + ("#" * self.__width))
 
     def __str__(self):
-        '''representation of rectangle'''
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}" +
                 f" - {self.__width}/{self.__height}")
 
