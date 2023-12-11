@@ -32,6 +32,7 @@ class Square(Rectangle):
         self.__height = cote
 
     def __str__(self):
+        '''return a readable repr of square'''
         return (f"[square] ({self.id}) {self.x}/{self.y} - {self.__width}")
 
     def update(self, *args, **kwargs):
