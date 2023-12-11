@@ -7,6 +7,7 @@ class Square(Rectangle):
     '''The Class Square whose is a particular rectangle'''
 
     def __init__(self, size, x=0, y=0, id=None):
+        '''Init method of cléss Square'''
 
         if not isinstance(size, int):
             raise TypeError("width must be an integer")
