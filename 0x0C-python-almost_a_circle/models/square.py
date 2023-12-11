@@ -18,10 +18,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        '''getter for attribute size'''
         return (self.__width)
 
     @size.setter
     def size(self, cote):
+        '''setter for size attribute'''
         if not isinstance(cote, int):
             raise TypeError("width must be an integer")
         elif (cote <= 0):
@@ -33,6 +35,7 @@ class Square(Rectangle):
         return (f"[square] ({self.id}) {self.x}/{self.y} - {self.__width}")
 
     def update(self, *args, **kwargs):
+        '''methode to update squares attributes'''
         count = 1
         for arg in args:
             if count == 1:
@@ -56,6 +59,7 @@ class Square(Rectangle):
                     self.id = value
 
     def to_dictionary(self):
+        '''methode to return et dict representaiont of the square'''
         sq_dict = {
             'id': self.id,
             'size': self.size,
