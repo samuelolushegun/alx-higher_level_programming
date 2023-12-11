@@ -8,6 +8,7 @@ class Rectangle(Base):
     '''Definition of rectangle class that is child of our base class'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''The init function of rectaangle class'''
         super().__init__(id)
 
         if not isinstance(width, int):
@@ -36,10 +37,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''getter of rectangle width'''
         return (self.__width)
 
     @width.setter
     def width(self, largeur):
+        '''setter of rectangle width'''
         if not isinstance(largeur, int):
             raise TypeError("width must be an integer")
         elif (largeur <= 0):
@@ -48,10 +51,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        '''Getter of rectangle's height'''
         return (self.__height)
 
     @height.setter
     def height(self, longueur):
+        '''setter of rectangle height'''
         if not isinstance(longueur, int):
             raise TypeError("height must be an integer")
         elif (longueur <= 0):
@@ -60,10 +65,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''getter of x '''
         return (self.__x)
 
     @x.setter
     def x(self, abscisse):
+        '''setter of x'''
         if not isinstance(abscisse, int):
             raise TypeError("x must be an integer")
         elif (abscisse < 0):
@@ -72,10 +79,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''getter of y parameter'''
         return (self.__y)
 
     @y.setter
     def y(self, ordonne):
+        '''setter of paramester y'''
         if not isinstance(ordonne, int):
             raise TypeError("y must be an integer")
         elif (ordonne < 0):
@@ -83,19 +92,23 @@ class Rectangle(Base):
         self.__y = ordonne
 
     def area(self):
+        '''method to define area'''
         return (self.__width * self.__height)
 
     def display(self):
+        '''method to displays # representation of rectangle'''
         for i in range(self.__y):
             print()
         for i in range(self.__height):
             print((" " * self.__x) + ("#" * self.__width))
 
     def __str__(self):
+        '''representation of rectangle'''
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}" +
                 f" - {self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
+        '''method to update attributes'''
         count = 1
         for arg in args:
             if count == 1:
@@ -123,6 +136,7 @@ class Rectangle(Base):
                     self.id = value
 
     def to_dictionary(self):
+        '''method to return a dict representation of rect'''
         d_rect = {
             'id': self.id,
             'width': self.__width,
