@@ -36,3 +36,10 @@ class Base:
 
         with open(f_name, 'w') as my_file:
             my_file.write(cls.to_json_string(content))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == "[]":
+            return ([])
+        else:
+            return (json.loads(json_string))
