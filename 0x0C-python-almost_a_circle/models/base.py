@@ -3,7 +3,6 @@
 import json
 
 
-
 class Base:
     '''
     Base class will be the “base” of all other classes in this project
@@ -40,5 +39,7 @@ class Base:
                 f_name = 'Rectangle.json'
                 for obj in list_objs:
                     content.append(Rectangle.to_dictionary(obj))
+        else:
+            f_name = 'Rectangle.json'
         with open(f_name, 'w') as my_file:
             my_file.write(Base.to_json_string(content))
