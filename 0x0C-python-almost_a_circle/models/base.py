@@ -3,6 +3,7 @@
 import json
 
 
+
 class Base:
     '''
     Base class will be the “base” of all other classes in this project
@@ -27,13 +28,17 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is None:
-            content = []
-        else:
-            content = Base.to_json_string(list_objs)
-        if type(list_objs[0]) is Square:
-            f_name = 'Square.json'
-        elif type(list_objs[0]) is Rectangle:
-            f_name = 'Rectangle.json'
+        content = []
+        if list_objs:
+            from models.square import Square
+            from models.rectangle import Rectangle
+            if type(list_objs[0]) is Square:
+                f_name = 'Square.json'
+                for obj in list_objs:
+                    content.append(Square.to_dictionary(obj))
+            elif type(list_objs[0]) is Rectangle:
+                f_name = 'Rectangle.json'
+                for obj in list_objs:
+                    content.append(Rectangle.to_dictionary(obj))
         with open(f_name, 'w') as my_file:
-            my_file.write(content)
+            my_file.write(Base.to_json_string(content))
