@@ -27,19 +27,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        content = []
-        if list_objs:
-            from models.square import Square
-            from models.rectangle import Rectangle
-            if type(list_objs[0]) is Square:
-                f_name = 'Square.json'
-                for obj in list_objs:
-                    content.append(Square.to_dictionary(obj))
-            elif type(list_objs[0]) is Rectangle:
-                f_name = 'Rectangle.json'
-                for obj in list_objs:
-                    content.append(Rectangle.to_dictionary(obj))
+        if list_objs is None or list_objs == []:
+            content = []
         else:
-            f_name = 'Rectangle.json'
+            content = [cls.to_dictionary(obj) for obj in list_objs]
+        cl_name = cls.__name__
+        f_name = f"{cl_name}.json"
+
         with open(f_name, 'w') as my_file:
-            my_file.write(Base.to_json_string(content))
+            my_file.write(cls.to_json_string(content))
