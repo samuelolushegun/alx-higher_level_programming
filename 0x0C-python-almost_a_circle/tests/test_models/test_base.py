@@ -11,5 +11,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(btwo.id, 2)
         self.assertEqual(bthree.id, 13)
 
-if __name == '__main__':
+if __name__ == '__main__':
     unittest.main()
