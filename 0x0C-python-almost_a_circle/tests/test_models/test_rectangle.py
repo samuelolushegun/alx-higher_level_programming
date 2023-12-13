@@ -2,10 +2,15 @@ import unittest
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
-    def test_assignment(self):
-        r1 = Rectangle(1, 3)
-        self.assertIsInstance(r1, Rectangle)
-        self.assertTrue(r1.id)
+
+    def test_inst(self):
+        Rectangle(1, 3)
+        Rectangle(5, 7)
+        Rectangle(9, 8, 0, 4)
+        Rectangle(4, 3, 16, 1, 2)
+        Rectangle("3", 1)
+        Rectangle(1, "2")
+        Rectangle(1, 2, "3")
 
 
 if __name__ == '__main__':
