@@ -8,9 +8,6 @@ class TestRectangle(unittest.TestCase):
         Rectangle(5, 7)
         Rectangle(9, 8, 0, 4)
         Rectangle(4, 3, 16, 1, 2)
-        Rectangle("3", 1)
-        Rectangle(1, "2")
-        Rectangle(1, 2, "3")
 
 
 if __name__ == '__main__':
