@@ -1,7 +1,8 @@
-"""JavaScript - Warm up"""
+# **JavaScript - Warm up**
 
-Learning Objectives:
-This project aims to provide a quick warm-up in JavaScript focusing on the following topics:
+## Learning Objectives:
+
+*This project aims to provide a quick warm-up in JavaScript focusing on the following topics:*
 
      -Variables and Constants
      -Data Types
