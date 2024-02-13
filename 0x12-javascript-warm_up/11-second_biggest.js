@@ -6,11 +6,11 @@ if (args.length <= 3) {
   let big = 0;
   let big2 = 0;
   for (let i = 2; i < args.length; i++) {
-    if (args[i] >= big) {
+      if (parseInt(args[i]) >= big) {
       big2 = big;
-      big = args[i];
-    } else if (args[i] > big2 && args[i] !== big) {
-      big2 = args[i];
+	  big = parseInt(args[i]);
+      } else if (parseInt(args[i]) > big2 && parseInt(args[i]) !== big) {
+	  big2 = parseInt(args[i]);
     }
   }
   console.log(big2);
