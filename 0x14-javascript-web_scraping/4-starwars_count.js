@@ -3,6 +3,11 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 
+if (process.argv.length !== 3) {
+  console.error('Usage: node count_movies_with_wedge_antilles.js <api_url>');
+  process.exit(1);
+}
+
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
