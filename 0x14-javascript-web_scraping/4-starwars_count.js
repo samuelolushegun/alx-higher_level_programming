@@ -11,7 +11,7 @@ if (process.argv.length !== 3) {
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
-    process.exot(1);
+    process.exit(1);
   }
   const films = JSON.parse(body).results;
   const moviesIn = films.filter(film =>
